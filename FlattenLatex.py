@@ -73,10 +73,10 @@ def SanitizeInputs(path, filename, outname):
     if not filename.lower().endswith('.tex'):
         filename = filename + '.tex'
 
-    if not os.path.isfile(filename):
+    if not os.path.isfile(path + filename):
         sys.exit('\nInput file, {}, does not exist.\n'.format(filename))
     if outname:
-        if os.path.isfile(outname):
+        if os.path.isfile(path + outname):
             sys.exit('\nOutput file, {}, is an existing file.\n'
                      .format(outname))
 
